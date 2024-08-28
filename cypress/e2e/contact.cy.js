@@ -1,7 +1,7 @@
 describe("contact form", () => {
   it("should submit the form", () => {
     cy.visit("http://localhost:5173/about");
-    cy.get('[data-cy="contact-input-message"]').type("Hello world");
+    cy.getById("contact-input-message").type("Hello world");
     cy.get('[data-cy="contact-input-name"]').type("John Doe");
     cy.get('[data-cy="contact-btn-submit"]').contains("Send Message");
     cy.get('[data-cy="contact-btn-submit"]').should(
